@@ -2,12 +2,10 @@ module Hello exposing (..)
 import Html exposing (text)
 
 main =
-    text (
-            3
-            |> toString
-         )
+    text (repeat 3) --works fine
+    --text (repeat "3") --works fine
 
-indexOf : a -> Array a -> Int
+repeat : a -> String
 
-indexOf a (Array b) =
-    3
+repeat a =
+    toString a ++ toString a

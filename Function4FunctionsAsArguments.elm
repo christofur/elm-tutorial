@@ -1,10 +1,11 @@
-module Hello exposing (..)
+module Function4FunctionsAsArguments exposing (..)
 import Html exposing (text)
 
 main =
-    text (
-            [1,2,3]
-            |> toString
-         )
+    text (stringProxy toString 42) --the interesting bit here is that
+    --we are passing in a function (toString) as a parameter to another function
 
-map : (Int -> String) -> List Int -> List String
+
+stringProxy : (Int -> String) -> Int -> String
+stringProxy fn num =
+    fn num
